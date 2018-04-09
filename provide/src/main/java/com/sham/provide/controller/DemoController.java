@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
     @Value("${server.port}")
     String port;
+    @Value("${neo.hello}")
+    String say;
     @RequestMapping(value = "/hi",method = RequestMethod.GET)
     public String sayhi(){
-        return "hi"+port;
+        return "hi"+port+"/n"+say;
     }
 }
